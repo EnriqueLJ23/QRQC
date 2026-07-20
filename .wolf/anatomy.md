@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-07-20T20:18:03.019Z
-> Files: 75 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-07-20T21:30:32.696Z
+> Files: 76 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../../../JESSEN~1/AppData/Local/Temp/claude/C--Users-Jes-sEnriqueLunaJass-Documents-DEV-QRQC/f14b7907-e9f4-4215-9349-84ac2569f7dc/scratchpad/
 
@@ -16,7 +16,7 @@
 - `.mcp.json` (~39 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `components.json` (~147 tok)
-- `docker-compose.yml` — Docker Compose services (~185 tok)
+- `docker-compose.yml` — Docker Compose services (~339 tok)
 - `Dockerfile` — Docker container definition (~290 tok)
 - `package-lock.json` — npm lock file (~82614 tok)
 - `package.json` — Node.js package manifest (~380 tok)

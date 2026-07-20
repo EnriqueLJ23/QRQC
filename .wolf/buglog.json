@@ -234,8 +234,16 @@
       "file": "Dockerfile",
       "root_cause": "schema.sql se lee del disco en runtime (no pasa por el bundle de Vite/rollup), así que nunca se incluía en la imagen final aunque `npm run build` compilara sin errores.",
       "fix": "Se agregó COPY --from=build-env /app/app/lib/server/schema.sql /app/app/lib/server/schema.sql al stage final. Verificado con `docker build` + `docker run` real contra Postgres local (vía host.docker.internal): bootstrap corrió y /scorecard respondió 200.",
-      "tags": ["docker", "deploy", "fs-readfilesync", "runtime-file", "portainer"],
-      "related_bugs": ["bug-002"],
+      "tags": [
+        "docker",
+        "deploy",
+        "fs-readfilesync",
+        "runtime-file",
+        "portainer"
+      ],
+      "related_bugs": [
+        "bug-002"
+      ],
       "occurrences": 1,
       "last_seen": "2026-07-20T20:20:00.000Z"
     },
@@ -246,7 +254,12 @@
       "file": "app/lib/server/jobs.server.ts",
       "root_cause": "NO es un bug de la app. node-cron v4 emite ese warning cuando su heartbeat (setTimeout) se retrasa más de missedExecutionTolerance (1000ms por defecto), típicamente porque el proceso Node se suspendió (laptop en sleep con `npm run dev` corriendo) o el event loop se bloqueó. El patrón reportado (10 minutos de warnings emitidos en ~270ms) es la firma de una suspensión de ~9 min seguida de resume. node-cron no reintenta ejecuciones perdidas, solo avisa y sigue — no hubo correos duplicados ni tareas re-ejecutadas silenciosamente.",
       "fix": "Sin cambio de código relacionado al warning en sí. En un contenedor Docker siempre activo (deploy con Portainer) este escenario es mucho menos probable que en una laptop de desarrollo.",
-      "tags": ["node-cron", "false-positive", "dev-environment", "no-fix-needed"],
+      "tags": [
+        "node-cron",
+        "false-positive",
+        "dev-environment",
+        "no-fix-needed"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-07-20T20:20:15.000Z"
@@ -254,14 +267,51 @@
     {
       "id": "bug-017",
       "timestamp": "2026-07-20T20:45:00.000Z",
-      "error_message": "Portainer: 'failed to create compose project: failed to resolve services environment: env file /data/compose/7/.env not found: stat /data/compose/7/.env: no such file or directory'",
+      "error_message": "Portainer: 'failed to create compose project: failed to resolve services environment: env file /data/compose/<id>/.env not found: stat /data/compose/<id>/.env: no such file or directory' (visto con id=7 y luego id=10)",
       "file": "docker-compose.yml",
-      "root_cause": "docker-compose.yml declara `env_file: - .env`, pero el .env real nunca se sube al repo (esta en .gitignore, tiene secretos). Portainer solo materializa /data/compose/<id>/.env cuando llenas la seccion 'Environment variables' del editor del stack; si el stack se desplego sin llenar esa seccion (p.ej. deploy vía Git repo apuntando solo al compose file), el archivo nunca existe en el host y `docker compose` falla antes de levantar el contenedor.",
-      "fix": "No es fix de codigo. En Portainer: stack -> Editor -> seccion 'Environment variables' (modo Advanced) -> pegar ahi todas las vars de .env.example con valores reales de produccion (DATABASE_URL, SESSION_SECRET, MICROSOFT_CLIENT_ID/SECRET/TENANT_ID, MICROSOFT_REDIRECT_URI, MAIL_SENDER, BASE_URL, PORT, APP_PORT) -> Update the stack. Portainer escribe el .env en /data/compose/<id>/ antes de correr compose.",
-      "tags": ["portainer", "docker-compose", "env-file", "deploy", "no-code-fix"],
-      "related_bugs": ["bug-015"],
+      "root_cause": "docker-compose.yml declara `env_file: - .env`, pero el .env real nunca se sube al repo (esta en .gitignore, tiene secretos). Portainer solo materializa /data/compose/<id>/.env cuando llenas la seccion 'Environment variables' del editor del stack; si el stack se desplego sin llenar esa seccion (p.ej. deploy vía Git repo apuntando solo al compose file), el archivo nunca existe en el host y `docker compose` falla antes de levantar el contenedor. RECURRENCIA (id 7 -> 10): la seccion 'Environment variables' es POR STACK, no global — si borras/recreas el stack (nuevo id cada vez), Portainer no reusa el .env del stack anterior, hay que volver a llenarla en el stack nuevo.",
+      "fix": "No es fix de codigo. En Portainer: stack -> Editor -> seccion 'Environment variables' (modo Advanced) -> pegar ahi todas las vars de .env.example con valores reales de produccion (DATABASE_URL, SESSION_SECRET, MICROSOFT_CLIENT_ID/SECRET/TENANT_ID, MICROSOFT_REDIRECT_URI, MAIL_SENDER, BASE_URL, PORT, APP_PORT) -> Update the stack. Si sigues recreando el stack en vez de actualizarlo, repite este paso cada vez. Considera usar 'Update the stack' en lugar de eliminar y crear uno nuevo, para no perder el .env generado.",
+      "tags": [
+        "portainer",
+        "docker-compose",
+        "env-file",
+        "deploy",
+        "no-code-fix",
+        "recurrente"
+      ],
+      "related_bugs": [
+        "bug-015"
+      ],
+      "occurrences": 2,
+      "last_seen": "2026-07-20T21:05:00.000Z"
+    },
+    {
+      "id": "bug-018",
+      "timestamp": "2026-07-20T21:30:32.712Z",
+      "error_message": "Significant refactor of ",
+      "file": "docker-compose.yml",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 6→16 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "yml"
+      ],
+      "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-07-20T20:45:00.000Z"
+      "last_seen": "2026-07-20T21:30:32.712Z"
+    },
+    {
+      "id": "bug-019",
+      "timestamp": "2026-07-20T21:35:00.000Z",
+      "error_message": "Portainer: 'compose build operation failed: listing workers for Build: failed to list workers: Unavailable: connection error: desc = \"error reading server preface: http2: failed reading the frame payload: http2: frame too large, note that the frame header looked like an HTTP/1.1 header\"'",
+      "file": "N/A (infraestructura del host Docker, no codigo del repo)",
+      "root_cause": "BuildKit del Docker Engine en el host de Portainer no pudo completar el handshake gRPC/HTTP2 con su daemon buildkitd (respondio HTTP/1.1) al intentar listar workers antes del build. Tipico de un builder de buildx corrupto/huerfano tras un build interrumpido. No relacionado con docker-compose.yml ni con bug-017 (ese ya quedo resuelto cambiando env_file por `environment:` con sustitucion ${VAR}, ver bug-018).",
+      "fix": "No es fix de codigo — requiere accion en el host remoto via SSH: `docker buildx rm -f $(docker buildx ls -q)`, `docker buildx create --use --name default`, y `systemctl restart docker`. Reintentar el deploy del stack despues.",
+      "tags": ["portainer", "buildkit", "docker-engine", "grpc", "http2", "no-code-fix", "infra"],
+      "related_bugs": ["bug-017", "bug-018"],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T21:35:00.000Z"
     }
   ]
 }
