@@ -250,6 +250,18 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-07-20T20:20:15.000Z"
+    },
+    {
+      "id": "bug-017",
+      "timestamp": "2026-07-20T20:45:00.000Z",
+      "error_message": "Portainer: 'failed to create compose project: failed to resolve services environment: env file /data/compose/7/.env not found: stat /data/compose/7/.env: no such file or directory'",
+      "file": "docker-compose.yml",
+      "root_cause": "docker-compose.yml declara `env_file: - .env`, pero el .env real nunca se sube al repo (esta en .gitignore, tiene secretos). Portainer solo materializa /data/compose/<id>/.env cuando llenas la seccion 'Environment variables' del editor del stack; si el stack se desplego sin llenar esa seccion (p.ej. deploy vía Git repo apuntando solo al compose file), el archivo nunca existe en el host y `docker compose` falla antes de levantar el contenedor.",
+      "fix": "No es fix de codigo. En Portainer: stack -> Editor -> seccion 'Environment variables' (modo Advanced) -> pegar ahi todas las vars de .env.example con valores reales de produccion (DATABASE_URL, SESSION_SECRET, MICROSOFT_CLIENT_ID/SECRET/TENANT_ID, MICROSOFT_REDIRECT_URI, MAIL_SENDER, BASE_URL, PORT, APP_PORT) -> Update the stack. Portainer escribe el .env en /data/compose/<id>/ antes de correr compose.",
+      "tags": ["portainer", "docker-compose", "env-file", "deploy", "no-code-fix"],
+      "related_bugs": ["bug-015"],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T20:45:00.000Z"
     }
   ]
 }

@@ -45,3 +45,4 @@
 - [2026-07-16] Correos por Graph con client credentials desde MAIL_SENDER (requiere permiso de aplicación Mail.Send con admin consent); si falla, se loguea y no rompe.
 - [2026-07-16] Jobs con node-cron dentro del proceso web (tick por minuto que compara HH:MM con la config en BD) en lugar de un servicio aparte: suficiente para on-premise single-instance.
 - [2026-07-20] Deploy: Postgres externo (no bundleado en el compose) + Nginx Proxy Manager en otra VM haciendo reverse proxy → el contenedor de la app publica un puerto al host en vez de usar labels de Traefik/red compartida.
+- [2026-07-20] Portainer NO crea /data/compose/<id>/.env solo porque docker-compose.yml tiene `env_file: - .env`. Hay que llenar la sección "Environment variables" del editor del stack (modo Advanced, pegar el contenido tipo .env.example) para que Portainer lo materialice antes de correr compose (bug-017).
