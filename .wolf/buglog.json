@@ -308,10 +308,37 @@
       "file": "N/A (infraestructura del host Docker, no codigo del repo)",
       "root_cause": "BuildKit del Docker Engine en el host de Portainer no pudo completar el handshake gRPC/HTTP2 con su daemon buildkitd (respondio HTTP/1.1) al intentar listar workers antes del build. Tipico de un builder de buildx corrupto/huerfano tras un build interrumpido. No relacionado con docker-compose.yml ni con bug-017 (ese ya quedo resuelto cambiando env_file por `environment:` con sustitucion ${VAR}, ver bug-018).",
       "fix": "No es fix de codigo — requiere accion en el host remoto via SSH: `docker buildx rm -f $(docker buildx ls -q)`, `docker buildx create --use --name default`, y `systemctl restart docker`. Reintentar el deploy del stack despues.",
-      "tags": ["portainer", "buildkit", "docker-engine", "grpc", "http2", "no-code-fix", "infra"],
-      "related_bugs": ["bug-017", "bug-018"],
+      "tags": [
+        "portainer",
+        "buildkit",
+        "docker-engine",
+        "grpc",
+        "http2",
+        "no-code-fix",
+        "infra"
+      ],
+      "related_bugs": [
+        "bug-017",
+        "bug-018"
+      ],
       "occurrences": 1,
       "last_seen": "2026-07-20T21:35:00.000Z"
+    },
+    {
+      "id": "bug-020",
+      "timestamp": "2026-07-20T21:37:15.705Z",
+      "error_message": "Significant refactor of ",
+      "file": "docker-compose.yml",
+      "root_cause": "15 lines replaced/restructured",
+      "fix": "Rewrote 21→9 lines (15 removed) | Also: env_file:; - stack.env",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "yml"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-20T21:41:31.717Z"
     }
   ]
 }

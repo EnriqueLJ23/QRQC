@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-07-20T21:30:32.696Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-07-20T21:41:31.703Z
 > Files: 76 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../../../JESSEN~1/AppData/Local/Temp/claude/C--Users-Jes-sEnriqueLunaJass-Documents-DEV-QRQC/f14b7907-e9f4-4215-9349-84ac2569f7dc/scratchpad/
@@ -12,11 +12,11 @@
 
 - `.dockerignore` — excluye .env*, .git, .wolf, .claude, .agents de la imagen (~26 tok)
 - `.env.example` — Documenta todas las env vars requeridas para deploy (Postgres, Entra ID, Graph, BASE_URL, PORT) (~180 tok)
-- `.gitignore` — Git ignore rules (~19 tok)
+- `.gitignore` — Git ignore rules (~22 tok)
 - `.mcp.json` (~39 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `components.json` (~147 tok)
-- `docker-compose.yml` — Docker Compose services (~339 tok)
+- `docker-compose.yml` — Docker Compose services (~301 tok)
 - `Dockerfile` — Docker container definition (~290 tok)
 - `package-lock.json` — npm lock file (~82614 tok)
 - `package.json` — Node.js package manifest (~380 tok)

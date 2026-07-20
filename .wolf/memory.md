@@ -98,3 +98,7 @@
 |------|--------|---------|---------|--------|
 | 15:30 | Edited docker-compose.yml | expanded (+10 lines) | ~183 |
 | 15:31 | Session end: 1 writes across 1 files (docker-compose.yml) | 2 reads | ~548 tok |
+| 15:37 | Edited docker-compose.yml | reduced (-12 lines) | ~102 |
+| 15:37 | Edited .gitignore | 3→4 lines | ~11 |
+| 15:38 | Session end: 3 writes across 2 files (docker-compose.yml, .gitignore) | 3 reads | ~835 tok |
+| 15:41 | Edited docker-compose.yml | expanded (+8 lines) | ~119 |
