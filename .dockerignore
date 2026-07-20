@@ -1,0 +1,11 @@
+.react-router
+build
+node_modules
+README.md
+.git
+.wolf
+.claude
+.agents
+.env
+.env.*
+!.env.example

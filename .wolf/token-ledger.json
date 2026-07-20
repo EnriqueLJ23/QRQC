@@ -1,0 +1,433 @@
+{
+  "version": 1,
+  "created_at": "2026-07-16T17:36:13.291Z",
+  "lifetime": {
+    "total_tokens_estimated": 40764,
+    "total_reads": 26,
+    "total_writes": 41,
+    "total_sessions": 3,
+    "anatomy_hits": 23,
+    "anatomy_misses": 3,
+    "repeated_reads_blocked": 19,
+    "estimated_savings_vs_bare_cli": 69222
+  },
+  "sessions": [
+    {
+      "id": "session-2026-07-20-0744",
+      "started": "2026-07-20T13:44:01.154Z",
+      "ended": "2026-07-20T13:50:01.204Z",
+      "reads": [
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 3909,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/formato.ts",
+          "tokens_estimated": 797,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 3423,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 8129,
+        "output_tokens_estimated": 0,
+        "reads_count": 3,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 3
+      }
+    },
+    {
+      "id": "session-2026-07-20-0744",
+      "started": "2026-07-20T13:44:01.154Z",
+      "ended": "2026-07-20T14:45:24.324Z",
+      "reads": [
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 4605,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/formato.ts",
+          "tokens_estimated": 797,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 3574,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/export-excel.ts",
+          "tokens_estimated": 1196,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/components/ui/tabs.tsx",
+          "tokens_estimated": 996,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/session.server.ts",
+          "tokens_estimated": 143,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JESSEN~1/AppData/Local/Temp/claude/C--Users-Jes-sEnriqueLunaJass-Documents-DEV-QRQC/f14b7907-e9f4-4215-9349-84ac2569f7dc/scratchpad/dev.log",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/formato.ts",
+          "tokens_estimated": 528,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 32,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 520,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 77,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 15,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/export-excel.ts",
+          "tokens_estimated": 23,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/export-excel.ts",
+          "tokens_estimated": 39,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 480,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/formato.ts",
+          "tokens_estimated": 116,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 40,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 62,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 252,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 590,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 61,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 26,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 31,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JESSEN~1/AppData/Local/Temp/claude/C--Users-Jes-sEnriqueLunaJass-Documents-DEV-QRQC/f14b7907-e9f4-4215-9349-84ac2569f7dc/scratchpad/cookie.mjs",
+          "tokens_estimated": 175,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 11311,
+        "output_tokens_estimated": 3067,
+        "reads_count": 7,
+        "writes_count": 17,
+        "repeated_reads_blocked": 9,
+        "anatomy_lookups": 6
+      }
+    },
+    {
+      "id": "session-2026-07-20-0744",
+      "started": "2026-07-20T13:44:01.154Z",
+      "ended": "2026-07-20T20:30:20.201Z",
+      "reads": [
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 4605,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/formato.ts",
+          "tokens_estimated": 797,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 3574,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/export-excel.ts",
+          "tokens_estimated": 1196,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/components/ui/tabs.tsx",
+          "tokens_estimated": 996,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/session.server.ts",
+          "tokens_estimated": 143,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JESSEN~1/AppData/Local/Temp/claude/C--Users-Jes-sEnriqueLunaJass-Documents-DEV-QRQC/f14b7907-e9f4-4215-9349-84ac2569f7dc/scratchpad/dev.log",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/jobs.server.ts",
+          "tokens_estimated": 1521,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/Dockerfile",
+          "tokens_estimated": 290,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/.dockerignore",
+          "tokens_estimated": 12,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/env.server.ts",
+          "tokens_estimated": 171,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/.gitignore",
+          "tokens_estimated": 19,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/package.json",
+          "tokens_estimated": 380,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/db.server.ts",
+          "tokens_estimated": 604,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/vite.config.ts",
+          "tokens_estimated": 83,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/.env",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/formato.ts",
+          "tokens_estimated": 528,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 32,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 520,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 77,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/scorecard.server.ts",
+          "tokens_estimated": 15,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/export-excel.ts",
+          "tokens_estimated": 23,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/export-excel.ts",
+          "tokens_estimated": 39,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 480,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/formato.ts",
+          "tokens_estimated": 116,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 40,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 62,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 252,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 590,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 61,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 26,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/routes/scorecard.tsx",
+          "tokens_estimated": 31,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JESSEN~1/AppData/Local/Temp/claude/C--Users-Jes-sEnriqueLunaJass-Documents-DEV-QRQC/f14b7907-e9f4-4215-9349-84ac2569f7dc/scratchpad/cookie.mjs",
+          "tokens_estimated": 175,
+          "action": "create"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/env.server.ts",
+          "tokens_estimated": 165,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/jobs.server.ts",
+          "tokens_estimated": 67,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/app/lib/server/jobs.server.ts",
+          "tokens_estimated": 34,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/Dockerfile",
+          "tokens_estimated": 203,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/.dockerignore",
+          "tokens_estimated": 28,
+          "action": "edit"
+        },
+        {
+          "file": "C:/Users/JesúsEnriqueLunaJass/Documents/DEV/QRQC/docker-compose.yml",
+          "tokens_estimated": 185,
+          "action": "create"
+        },
+        {
+          "file": "C:/Users/JESSEN~1/AppData/Local/Temp/claude/C--Users-Jes-sEnriqueLunaJass-Documents-DEV-QRQC/f14b7907-e9f4-4215-9349-84ac2569f7dc/scratchpad/docker-test.env",
+          "tokens_estimated": 117,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 14391,
+        "output_tokens_estimated": 3866,
+        "reads_count": 16,
+        "writes_count": 24,
+        "repeated_reads_blocked": 10,
+        "anatomy_lookups": 14
+      }
+    }
+  ],
+  "daemon_usage": [],
+  "waste_flags": [],
+  "optimization_report": {
+    "last_generated": null,
+    "patterns": []
+  }
+}

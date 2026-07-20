@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-07-16T18:26:29.009Z",
+      "error_message": "Missing import: ~/lib/server/db.server",
+      "file": "app/root.tsx",
+      "root_cause": "Module(s) not imported: ~/lib/server/db.server",
+      "fix": "Added import(s) for ~/lib/server/db.server",
+      "tags": [
+        "auto-detected",
+        "missing-import",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:26:29.009Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-07-16T19:05:00.000Z",
+      "error_message": "database \"qrqc\" does not exist (tras arrancar el dev server)",
+      "file": "app/root.tsx",
+      "root_cause": "El bootstrap de la BD (crear base + esquema + seed) era perezoso: solo corría en el primer query, y las rutas públicas (/login) no tocan la BD, así que nada lo disparaba hasta el tick del cron (hasta 60s después).",
+      "fix": "El loader de root.tsx ahora hace `await getPool()` en el primer request, garantizando esquema/seed antes de servir cualquier página.",
+      "tags": [
+        "postgres",
+        "bootstrap",
+        "lazy-init",
+        "react-router"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:05:00.000Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-07-16T18:49:03.322Z",
+      "error_message": "Significant refactor of ",
+      "file": "app/lib/server/auth.server.ts",
+      "root_cause": "9 lines replaced/restructured",
+      "fix": "Rewrote 16→20 lines (9 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:49:03.322Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-07-16T19:34:53.599Z",
+      "error_message": "Missing error handling in function",
+      "file": "app/lib/server/graph.server.ts",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:34:53.599Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-07-16T20:13:09.414Z",
+      "error_message": "Base UI: MenuGroupContext is missing. Menu group parts must be used within <Menu.Group>",
+      "file": "app/routes/app-layout.tsx",
+      "root_cause": "DropdownMenuLabel de shadcn base-nova envuelve MenuPrimitive.GroupLabel de Base UI, que exige estar dentro de un Menu.Group; se usó suelto en el menú de usuario y tumbaba el render (pantalla ¡Ups!).",
+      "fix": "Envolver DropdownMenuLabel en DropdownMenuGroup en el dropdown del usuario.",
+      "tags": [
+        "base-ui",
+        "shadcn",
+        "dropdown-menu",
+        "runtime-error"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T20:13:09.415Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-07-20T13:51:24.765Z",
+      "error_message": "Significant refactor of ",
+      "file": "app/lib/formato.ts",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 14→50 lines (7 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T13:51:24.765Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-07-20T13:51:55.827Z",
+      "error_message": "Significant refactor of ",
+      "file": "app/lib/server/scorecard.server.ts",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 31→44 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T13:51:55.827Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-07-20T13:52:16.009Z",
+      "error_message": "Wrong reference: anio should be fechas",
+      "file": "app/lib/server/scorecard.server.ts",
+      "root_cause": "Used \"anio\" instead of \"fechas\"",
+      "fix": "Changed anio → fechas",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T13:52:16.009Z"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-07-20T13:53:37.185Z",
+      "error_message": "Significant refactor of ",
+      "file": "app/routes/scorecard.tsx",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 30→42 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T13:53:37.185Z"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-07-20T13:54:21.232Z",
+      "error_message": "Type error",
+      "file": "app/lib/formato.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T13:54:21.232Z"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-07-20T13:54:54.039Z",
+      "error_message": "Missing guard clause",
+      "file": "app/routes/scorecard.tsx",
+      "root_cause": "No early return/throw for edge case: dias.length === 0",
+      "fix": "Added guard clause: if (dias.length === 0)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T13:54:54.039Z"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-07-20T13:55:49.433Z",
+      "error_message": "Incorrect value in code",
+      "file": "app/routes/scorecard.tsx",
+      "root_cause": "Had `/export/excel?area=${areaId}&anio=${anio}&mes=${m",
+      "fix": "Changed to `/export/excel?area=${areaId}&anio=${exportAnio}&m",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-20T13:56:11.664Z"
+    },
+    {
+      "id": "bug-013",
+      "timestamp": "2026-07-20T20:14:27.447Z",
+      "error_message": "Incorrect value in code",
+      "file": "app/lib/server/jobs.server.ts",
+      "root_cause": "Had \"http://localhost:5174/scorecard\"",
+      "fix": "Changed to \"${env.BASE_URL}/scorecard\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T20:14:27.447Z"
+    },
+    {
+      "id": "bug-014",
+      "timestamp": "2026-07-20T20:14:39.052Z",
+      "error_message": "Missing error handling in unknown",
+      "file": "Dockerfile",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "unknown"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T20:14:39.053Z"
+    },
+    {
+      "id": "bug-015",
+      "timestamp": "2026-07-20T20:20:00.000Z",
+      "error_message": "El Dockerfile de producción crashearía al primer request en Portainer: bootstrap() en db.server.ts lee app/lib/server/schema.sql con fs.readFileSync, pero el stage final del Dockerfile solo copiaba build/ y node_modules/, no app/.",
+      "file": "Dockerfile",
+      "root_cause": "schema.sql se lee del disco en runtime (no pasa por el bundle de Vite/rollup), así que nunca se incluía en la imagen final aunque `npm run build` compilara sin errores.",
+      "fix": "Se agregó COPY --from=build-env /app/app/lib/server/schema.sql /app/app/lib/server/schema.sql al stage final. Verificado con `docker build` + `docker run` real contra Postgres local (vía host.docker.internal): bootstrap corrió y /scorecard respondió 200.",
+      "tags": ["docker", "deploy", "fs-readfilesync", "runtime-file", "portainer"],
+      "related_bugs": ["bug-002"],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T20:20:00.000Z"
+    },
+    {
+      "id": "bug-016",
+      "timestamp": "2026-07-20T20:20:15.000Z",
+      "error_message": "Usuario reportó logs '[NODE-CRON] [WARN] missed execution ... Possible blocking IO or high CPU'",
+      "file": "app/lib/server/jobs.server.ts",
+      "root_cause": "NO es un bug de la app. node-cron v4 emite ese warning cuando su heartbeat (setTimeout) se retrasa más de missedExecutionTolerance (1000ms por defecto), típicamente porque el proceso Node se suspendió (laptop en sleep con `npm run dev` corriendo) o el event loop se bloqueó. El patrón reportado (10 minutos de warnings emitidos en ~270ms) es la firma de una suspensión de ~9 min seguida de resume. node-cron no reintenta ejecuciones perdidas, solo avisa y sigue — no hubo correos duplicados ni tareas re-ejecutadas silenciosamente.",
+      "fix": "Sin cambio de código relacionado al warning en sí. En un contenedor Docker siempre activo (deploy con Portainer) este escenario es mucho menos probable que en una laptop de desarrollo.",
+      "tags": ["node-cron", "false-positive", "dev-environment", "no-fix-needed"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T20:20:15.000Z"
+    }
+  ]
+}
